@@ -14,9 +14,6 @@ EGIT_BRANCH="master"
 SLOT="0"
 IUSE=""
 
-DEPEND="virtual/pkgconfig"
-RDEPEND="${DEPEND}"
-
 src_prepare() {
 	grep -v "LDCONFIG_EXECUTABLE" CMakeLists.txt | sed -e "s/\(TARGETS .*lib\) \(.*lib\)/\1\${LIB_SUFFIX} \2\${LIB_SUFFIX}/g" > CMakeLists.temp
 	mv CMakeLists.temp CMakeLists.txt
